@@ -1,4 +1,4 @@
-version: 0.0.4
+version: 0.0.5
 
 branches:
   only:
@@ -20,6 +20,7 @@ build_script: |
   cd ..
   curl -L -o postgresql-14.0.tar.bz2 https://ftp.postgresql.org/pub/source/v14.0/postgresql-14.0.tar.bz2
   7z x postgresql-14.0.tar.bz2
+  7z x postgresql-14.0.tar
   cd postgresql-14.0
   copy /y %APPVEYOR_BUILD_FOLDER%\build.sh .
   C:\msys64\usr\bin\bash -lc "./build"
