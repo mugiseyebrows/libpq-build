@@ -1,11 +1,11 @@
-version: 0.0.7
+version: 0.0.8
 
 branches:
   only:
     - main
     
 artifacts:
-  - path: C:\projects\postgresql-14.0\src\interfaces\libpq\libpq.dll
+  - path: libpq.dll
     name: libpq
 
 build_script: |
@@ -23,3 +23,4 @@ build_script: |
   cd postgresql-14.0
   copy /y %APPVEYOR_BUILD_FOLDER%\build.sh .
   C:\msys64\usr\bin\bash -lc "./build.sh"
+  copy /y C:\projects\postgresql-14.0\src\interfaces\libpq\libpq.dll %APPVEYOR_BUILD_FOLDER%
