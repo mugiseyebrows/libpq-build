@@ -1,4 +1,4 @@
-version: 0.0.6
+version: 0.0.7
 
 branches:
   only:
@@ -14,7 +14,6 @@ build_script: |
   C:\msys64\usr\bin\bash -lc "pacman -S --needed base-devel mingw-w64-x86_64-toolchain"
   set CHERE_INVOKING=yes
   set MSYSTEM=MINGW64
-  C:\msys64\usr\bin\bash -lc "pacman --noconfirm -Syuu"
   call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
   set PATH=C:\Qt\5.14.2\msvc2017_64\bin;C:\Qt\Tools\QtCreator\bin\jom;C:\Python39-x64;C:\Python39-x64\Scripts;%PATH%
   cd ..
