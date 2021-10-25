@@ -1,0 +1,13 @@
+version: 0.0.1
+
+branches:
+  only:
+    - main
+    
+build_script: |
+  call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
+  set PATH=C:\Qt\5.14.2\msvc2017_64\bin;C:\Qt\Tools\QtCreator\bin\jom;C:\Python39-x64;C:\Python39-x64\Scripts;%PATH%
+  cd ..
+  curl -s -L -o postgresql-14.0.tar.bz2 https://ftp.postgresql.org/pub/source/v14.0/postgresql-14.0.tar.bz2
+  where tar
+  tar xvf postgresql-14.0.tar.bz2
