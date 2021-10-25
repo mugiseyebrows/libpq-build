@@ -1,4 +1,4 @@
-version: 0.0.5
+version: 0.0.6
 
 branches:
   only:
@@ -9,8 +9,8 @@ artifacts:
     name: libpq
 
 build_script: |
-  C:\msys64\usr\bin\bash -lc "pacman --noconfirm -Syuu"
-  C:\msys64\usr\bin\bash -lc "pacman --noconfirm -Syuu"
+  rem C:\msys64\usr\bin\bash -lc "pacman --noconfirm -Syuu"
+  rem C:\msys64\usr\bin\bash -lc "pacman --noconfirm -Syuu"
   C:\msys64\usr\bin\bash -lc "pacman -S --needed base-devel mingw-w64-x86_64-toolchain"
   set CHERE_INVOKING=yes
   set MSYSTEM=MINGW64
@@ -23,4 +23,4 @@ build_script: |
   7z x postgresql-14.0.tar
   cd postgresql-14.0
   copy /y %APPVEYOR_BUILD_FOLDER%\build.sh .
-  C:\msys64\usr\bin\bash -lc "./build"
+  C:\msys64\usr\bin\bash -lc "./build.sh"
